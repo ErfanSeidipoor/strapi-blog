@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 500,
+      "minLength": 10
+    },
+    "metaTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 1000
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 500
+    },
+    "summary": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "contentNew": {
+      "type": "blocks"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
